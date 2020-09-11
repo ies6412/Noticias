@@ -5,12 +5,13 @@
       <span class="noticias-source-name"> {{noticia.source.name}}</span>
       
     </ion-card-subtitle>
-    <ion-card-title>
+    <ion-card-title (click)="AbrirNoticia()">
       {{noticia.title}}
     </ion-card-title>
   </ion-card-header>
     <ion-img *ngIf="noticia.urlToImage"
-     [src]="noticia.urlToImage">           
+     [src]="noticia.urlToImage"
+     (click)="AbrirNoticia()">           
     </ion-img>
     <ion-card-content>
       <p>{{noticia.content}}</p>
