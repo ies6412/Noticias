@@ -16,6 +16,8 @@ const URL = environment.apiUrl;
 
 export class ApiNewServiceService {
 PageHeadlines = 0;
+PageHeadlineCategorias = 0;
+categoria = '';
   constructor(private http: HttpClient) { }
 
 
@@ -39,6 +41,19 @@ PageHeadlines = 0;
   }
   ObtenerNoticiasCategoria(categoria: string){
 
+    if (this.categoria === categoria){
+   // this.PageHeadlineCategorias=pagina;
+    this.PageHeadlineCategorias++;
+
+  }
+  else
+  {
+    this.PageHeadlineCategorias = 1;
+    this.categoria = categoria;
+  }
+    console.log('esta pagina->', this.PageHeadlineCategorias);
+
+
     // podemos enviar con un signo + simpre y cuando se usen comillas simples como en este caso
      // return this.http.get<NoticiaInterface>('http://newsapi.org/v2/top-headlines?country=us&category='+categoria+'&apiKey='+apiKey);
 
@@ -48,6 +63,6 @@ PageHeadlines = 0;
 
      // o utilizando la funcion... ten en cuenta que es este caso solo se envia hasta antes de &apiKey...
 
-     return this.Cargarservicionoticia<NoticiaInterface>(`/top-headlines?country=us&category=${categoria}`);
+    return this.Cargarservicionoticia<NoticiaInterface>(`/top-headlines?country=us&category=${categoria}&page=${this.PageHeadlineCategorias}`);
   }
 }
