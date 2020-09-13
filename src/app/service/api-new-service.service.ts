@@ -37,7 +37,8 @@ categoria = '';
      return this.Cargarservicionoticia<NoticiaInterface>(`top-headlines?country=us&category=business&page=${this.PageHeadlines}`);
 
 
-    // return this.http.get<NoticiaInterface>(`${URL}top-headlines?country=us&category=business&apiKey=${apiKey}`);
+   // tslint:disable-next-line: max-line-length
+   // return this.http.get<NoticiaInterface>(`http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=28ef4ed4808b4deeb7d65cd0e3876641`);
   }
   ObtenerNoticiasCategoria(categoria: string){
 
