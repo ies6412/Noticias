@@ -5,6 +5,7 @@
      size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" 
      *ngFor="let noticia of Noticias; let i=index" >
      <app-noticia [noticia]="noticia"
+                  [enfavorito]="enfavorito"
                   [i]="i"></app-noticia>
     </ion-col>
   </ion-row>
